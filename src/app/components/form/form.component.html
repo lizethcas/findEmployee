@@ -1,0 +1,15 @@
+<section class="consulta-legajo">
+  <div class="formulario">
+    <h1>Consulta de Legajo de Empleado</h1>
+    <form [formGroup]="applyForm" (submit)="submitSearch()">
+      <label for="dni">Ingrese su DNI:</label>
+      <input type="text" id="dni" formControlName="dni" required />
+
+      <div class="botones">
+        <button type="submit">Consultar</button>
+        <button type="reset" (click)="reset()">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  <app-employee *ngIf="data.showInfo" [data]="data"></app-employee>
+</section>
